@@ -80,53 +80,39 @@ $(document).ready(function() {
 
 
 <div id="work">
-	<div class="container_16">
+	<div class="container_12">
 		
 		<div class="subheader">
             <div class="subheader_line"></div><h2>work</h2><div class="subheader_line"></div>
 		</div>
-        <br><a href="list"><p style="text-align:right">See More</p></a>
+        <br><a href="list"><p style="text-align:right">浏览更多</p></a>
 		
 		<div class="gallery">
-			<div class="grid_5">
-                <a href="{% static 'img/example_img.png' %}" class="single_image"><div class="screenshot1 ss"></div></a>
-				<p>Website name<br />
-				<span class="ss_text">Web Design / Development</span>
-				</p>
-			</div>
-			<div class="grid_6">
-                <a href="{% static 'img/example_img.png' %}" class="single_image"><div class="screenshot2 ss center"></div></a>
-				<p>Website name<br />
-				<span class="ss_text">Web Design / Development</span>
-				</p>
-			</div>
-			<div class="grid_5">
-                <a href="{% static 'img/example_img.png' %}" class="single_image"><div class="screenshot3 ss"></div></a>
-				<p>Website name<br />
-				<span class="ss_text">Web Design / Development</span>
-				</p>
-			</div>
-		
-			<div class="spacer">&nbsp;</div>
-		
-			<div class="grid_5">
-                <a href="{% static 'img/example_img.png' %}" class="single_image"><div class="screenshot4 ss"></div></a>
-				<p>Website name<br />
-				<span class="ss_text">Web Design / Development</span>
-				</p>
-			</div>
-			<div class="grid_6">
-                <a href="{% static 'img/example_img.png' %}" class="single_image"><div class="screenshot5 ss center"></div></a>
-				<p>Website name<br />
-				<span class="ss_text">Web Design / Development</span>
-				</p>
-			</div>
-			<div class="grid_5">
-                <a href="{% static 'img/example_img.png' %}" class="single_image"><div class="screenshot6 ss"></div></a>
-				<p>Website name<br />
-				<span class="ss_text">Web Design / Development</span>
-				</p>
-			</div>
+            <div class="grid_4">
+                <img src={{ picture_list.0.url }} width="300px" height="180px">
+                <p>{{picture_list.0.name}}<br><span class="ss_text">{{picture_list.0.des}}</span></p>
+            </div>
+            <div class="grid_4">
+                <img src={{ picture_list.1.url }} width="300px" height="180px">
+                <p>{{picture_list.1.name}}<br><span class="ss_text">{{picture_list.1.des}}</span></p>
+            </div>
+            <div class="grid_4">
+                <img src={{ picture_list.2.url }} width="300px" height="180px">
+                <p>{{picture_list.2.name}}<br><span class="ss_text">{{picture_list.2.des}}</span></p>
+            </div>
+            <br>
+            <div class="grid_4">
+                <img src={{ picture_list.3.url }} width="300px" height="180px">
+                <p>{{picture_list.3.name}}<br><span class="ss_text">{{picture_list.3.des}}</span></p>
+            </div>
+            <div class="grid_4">
+                <img src={{ picture_list.4.url }} width="300px" height="180px">
+                <p>{{picture_list.4.name}}<br><span class="ss_text">{{picture_list.4.des}}</span></p>
+            </div>
+            <div class="grid_4">
+                <img src={{ picture_list.5.url }} width="300px" height="180px">
+                <p>{{picture_list.5.name}}<br><span class="ss_text">{{picture_list.5.des}}</span></p>
+            </div>
 		</div><!-- end .gallery -->
 		
 	</div> <!-- end .container_16 -->
