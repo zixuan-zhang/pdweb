@@ -1,0 +1,37 @@
+<html lang="en">
+    <head>
+    {% load staticfiles %}
+    <meta charset="UTF-8"/>
+    <title>Upload Pictures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upload Pictures">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}"/>
+    </head>
+    <body>
+    <div class="container">
+        <div class="codrops-top">
+            <header>
+                <h1>Choose Picture and Upload</h1>
+            </header>
+            <section>
+                <div id="container_demo">
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form action="" autocomplete="on" enctype="multipart/form-data" method="post">
+                                <h1> Uploader </h1>
+                                <table>
+                                    {{ form.as_table }}
+                                </table>
+                                <input type="submit" value="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </body>
+</html>
+
