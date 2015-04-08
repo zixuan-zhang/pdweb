@@ -12,7 +12,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^index/$', index),
-    url(r'^index/list/$', product_list),
+    url(r'^list/$', product_list),
     url(r'^login/', login),
     url(r'^upload/', upload_file),
 )

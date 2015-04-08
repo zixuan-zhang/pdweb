@@ -2,7 +2,7 @@
 <html lang="">
 <head>
   <meta charset="utf-8">
-	<title>Woop - Portfolio Template</title>
+	<title>嘉禾皮雕公司</title>
 	<meta name="description" content="" />
   	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
@@ -60,21 +60,19 @@ $(document).ready(function() {
 
 <div id="intro">
 	<div class="title">
-		<h1>hello<br />
-		<span class="small">my name is</span><br />
-		<span class="name">john doe</span><br />
+        <h1><br /><br>
+		<span class="name">嘉禾皮雕公司</span><br />
 		<span class="intro_line"></span><span class="amp">&</span><span class="intro_line"></span><br />
-		<span class="small">i'm a web designer</span></h1>
+		<span class="small">专业成就您！</span></h1>
 	</div> <!-- end .title -->
 </div> <!-- end #intro -->
 
 
 <nav>
 	<ul>
-		<li><a href="#intro">home</a></li>
-		<li><a href="#work">work</a></li>
-		<li><a href="#about">about</a></li>
-		<li><a href="#contact">contact</a></li>
+		<li><a href="#intro">主页</a></li>
+		<li><a href="#work">产品</a></li>
+		<li><a href="#about">关于</a></li>
 	</ul>
 </nav> <!-- end nav -->
 
@@ -83,9 +81,9 @@ $(document).ready(function() {
 	<div class="container_12">
 		
 		<div class="subheader">
-            <div class="subheader_line"></div><h2>work</h2><div class="subheader_line"></div>
+            <div class="subheader_line"></div><h2>产品</h2><div class="subheader_line"></div>
 		</div>
-        <br><a href="list"><p style="text-align:right">浏览更多</p></a>
+        <br><a href="/list" target="_blank"><p style="text-align:right">浏览更多</p></a>
 		
 		<div class="gallery">
             <div class="grid_4">
@@ -125,19 +123,12 @@ $(document).ready(function() {
 	<div class="container_16">
 	
 		<div class="subheader">
-			<div class="subheader_line"></div><h2>about</h2><div class="subheader_line"></div>
+			<div class="subheader_line"></div><h2>关于</h2><div class="subheader_line"></div>
 		</div>
 	
 	<div class="grid_5">
 		<div class="about_pic"></div>
-		<div class="social">
-			<ul>
-				<li><a href="#"><div class="twitter sprite"></div></a></li>
-				<li><a href="#"><div class="facebook sprite"></div></a></li>
-				<li><a href="#"><div class="linkedin sprite"></div></a></li>
-				<li><a href="#"><div class="dribble sprite"></div></a></li>
-			</ul>
-		</div> <!-- end .social -->
+        <br><a href="/login" target="_blank"><p style="text-align:center">登录</p></a>
 	</div> <!-- end .grid_5 -->
 	
 	<div class="grid_6">
@@ -150,17 +141,21 @@ $(document).ready(function() {
 	</div> <!-- end .grid_6 -->
 	
 	<div class="grid_5">
-		<div class="skills">
-			<h4>Skills</h4>
-			<ul>
-				<li><div class="skill1"><p>Photoshop</p></div></li>
-				<li><div class="skill2"><p>Illustrator</p></div></li>
-				<li><div class="skill3"><p>HTML/CSS</p></div></li>
-				<li><div class="skill4"><p>Javascript</p></div></li>
-				<li><div class="skill5"><p>Wordpress</p></div></li>
-				<li><div class="skill6"><p>PHP/MySQL</p></div></li>
-			</ul>
-		</div> <!-- end .skills -->
+        <br><br><br>
+        <div class="contact_info">
+		    <h4>Contact Information</h4>
+		    <div class="grid_4 alpha">
+                <p><img src="{% static 'img/icn_phone.png' %}" alt="" /> +351 123 456 789</p>
+                <p><img src="{% static 'img/icn_mail.png' %}" alt="" /> youremail@yoursite.com</p>
+		    </div>
+		    <div class="grid_4 omega">
+                <p><img src="{% static 'img/icn_address.png' %}" alt="" /> Fifth Avenue<br />
+				<span class="address">767 5th Ave, New York,</span><br />
+				<span class="address">NY 10153</span></p>
+		    </div>
+	    </div>  <!--end .contact_info -->
+	    <div class="map">
+	    </div> <!-- end .map -->
 	</div> <!-- end .grid_5 -->
 	
 	</div> <!-- end .container_16 -->
@@ -168,51 +163,6 @@ $(document).ready(function() {
 
 <div class="about_bg_bottom"></div>
 
-<div id="contact">
-	<div class="container_16">
-	
-		<div class="subheader">
-			<div class="subheader_line"></div><h2>contact</h2><div class="subheader_line"></div>
-		</div>
-		
-		<div class="grid_7">
-			<div class="contact_form">
-				<h4>Get in touch</h4>
-				<form method="post">
-					<input type="text" name="Name" id="name" value="Name" onFocus="this.value = this.value=='Name'?'':this.value;" onBlur="this.value = this.value==''?'Name':this.value;" />
-					<input type="text" name="Email" id="email" value="Email" onFocus="this.value = this.value=='Email'?'':this.value;" onBlur="this.value = this.value==''?'Email':this.value;" />
-					<input type="text" value="Subject" id="subject" onFocus="this.value = this.value=='Subject'?'':this.value;" onBlur="this.value = this.value==''?'Subject':this.value;" />
-					<textarea name="Message" id="body" onFocus="this.value = this.value=='Message'?'':this.value;" onBlur="this.value = this.value==''?'Message':this.value;">Message</textarea>
-					<input type="submit" name="submit" id="submit" value="send" class="submit-button" onClick="return check_values();" />
-				</form>
-				<div id="confirmation" style="display:none; position: relative; z-index: 600; font-family: 'Open Sans', sans-serif; font-weight: 300; font-size: 16px; color: #4e4e4e;"></div>
-			</div> <!-- end .contact_form -->
-				
-		</div> <!-- end .grid_7 -->
-				
-		<div class="grid_9">
-		
-			<div class="contact_info">
-				<h4>Contact Information</h4>
-				<div class="grid_4 alpha">
-                    <p><img src="{% static 'img/icn_phone.png' %}" alt="" /> +351 123 456 789</p>
-                    <p><img src="{% static 'img/icn_mail.png' %}" alt="" /> youremail@yoursite.com</p>
-				</div>
-				<div class="grid_4 omega">
-                    <p><img src="{% static 'img/icn_address.png' %}" alt="" /> Fifth Avenue<br />
-					<span class="address">767 5th Ave, New York,</span><br />
-					<span class="address">NY 10153</span></p>
-				</div>
-			</div> <!-- end .contact_info -->
-		
-			<div class="map">
-				
-			</div> <!-- end .map -->
-			
-		</div> <!-- end .grid_9 -->
-		
-	</div> <!-- end .container_16 -->
-</div> <!-- end #contact -->
 
 <div class="contact_bg_bottom"></div>
 

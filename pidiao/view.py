@@ -1,6 +1,8 @@
+import hashlib
+
 from django.template.loader import get_template
 from django.template import Context
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_exempt
 
@@ -23,7 +25,7 @@ def index(request):
     return HttpResponse(html)
 
 def product_list(request):
-    data = MONGO.search_data({}).limit(6)
+    data = MONGO.search_data({})
     picture_list = []
     for _data in data:
         d = {}
@@ -36,18 +38,17 @@ def product_list(request):
     html = t.render(Context({"pagelist": ["p2", "p3", "p4"], "pagenum": 4, "picture_list": picture_list}))
     return HttpResponse(html)
 
+@csrf_exempt
 def login(request):
     if request.method == "GET":
-        GET = request.GET
-        if "username" not in GET and "password" not in GET:
-            t = get_template("login.html")
-            html = t.render(Context({}))
-            return HttpResponse(html)
-        username = GET['username']
-        password = GET['password']
-
-        if username == "zhang" and password == "zixuan":
-            return HttpResponse("Login Success")
+        return render_to_response("login.html", {})
+    else:
+        POST = request.POST
+        username = POST['username']
+        password = POST['password']
+        md5 = hashlib.md5(password.encode('utf-8')).hexdigest()
+        request.session['pwmd5'] = md5
+        return HttpResponseRedirect("/upload")
 
 @csrf_exempt
 def upload_file(request):

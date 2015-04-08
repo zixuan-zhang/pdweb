@@ -432,6 +432,31 @@ span.ss_text {
 	background-position: 0 -52px;
 }
 
+/********** contact info ********/
+.contact_info {
+    margin-top: 30px;
+}
+
+.contact_info h4 {
+	margin-bottom: 15px;
+}
+
+.contact_info p {
+	margin-bottom: 6px;
+    padding: 4px 0 0 10px;
+	color: #4e4e4e;
+}
+
+.contact_info img {
+	vertical-align: baseline;
+	margin-right: 8px;
+}
+
+.contact_info ul li {
+    margin-bottom: 15px;
+}
+
+
 /********** skills *********/
 
 .skills {
@@ -569,21 +594,6 @@ span.ss_text {
 
 .contact_form input.submit-button:hover {
 	background-color: #e76658;
-}
-
-
-.contact_info h4 {
-	margin-bottom: 15px;
-}
-
-.contact_info p {
-	margin-bottom: 6px;
-	color: #4e4e4e;
-}
-
-.contact_info img {
-	vertical-align: baseline;
-	margin-right: 8px;
 }
 
 span.address {
