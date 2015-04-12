@@ -32,6 +32,9 @@
                         <div id="login" class="animate form">
                             <form  action="" autocomplete="on" method="post"> 
                                 <h1>Log in</h1> 
+                                {%if error %}
+                                <p>{{error}}</p>
+                                {%endif%}
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>
                                     <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>

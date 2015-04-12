@@ -47,5 +47,11 @@ class Mongo:
     def search_data(self, condition=None):
         return self.db.picture.find(condition)
 
+    def find_account(self, condition=None):
+        print condition
+        result = self.db.account.find_one(condition)
+        print result
+        return result
+
 MONGO = Mongo("test")
 QINIU = Qiniu()

@@ -1,3 +1,4 @@
+import time
 import hashlib
 
 from django.template.loader import get_template
@@ -8,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from uploader import MONGO
 from .forms import UploadFileForm
-from .processor import handle_uploaded_file
+from .processor import handle_uploaded_file, check_login
 
 def index(request):
     data = MONGO.search_data({}).limit(6)
@@ -46,11 +47,16 @@ def login(request):
         POST = request.POST
         username = POST['username']
         password = POST['password']
-        md5 = hashlib.md5(password.encode('utf-8')).hexdigest()
-        request.session['pwmd5'] = md5
-        return HttpResponseRedirect("/upload")
+        if MONGO.find_account({"user": username, "password": password}):
+            md5 = hashlib.md5(password.encode('utf-8')).hexdigest()
+            request.session['pwmd5'] = md5
+            request.session['timestamp'] = str(int(time.time()))
+            return HttpResponseRedirect("/upload")
+        else:
+            return render_to_response("login.html", {"error": "invalid account or password"})
 
 @csrf_exempt
+@check_login
 def upload_file(request):
     if request.method == "POST":
         form = UploadFileForm(request.POST, request.FILES)
